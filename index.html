@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuri Atelier | Luxury African Fashion</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <!-- ===== ALL STYLES IN ONE PLACE (IN THE HEAD) ===== -->
+    <style>
+        /* ==========================
+           RESET
+        ========================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background: #FDF6E3;
+            color: #1A3C40;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==========================
+           COLORS
+        ========================== */
+        :root {
+            --teal: #1A3C40;
+            --gold: #D4AF37;
+            --cream: #FDF6E3;
+        }
+
+        /* ==========================
+           HEADINGS
+        ========================== */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* ==========================
+           CONTAINER
+        ========================== */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* ==========================
+           NAVBAR
+        ========================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 0;
+            background: rgba(26, 60, 64, .90);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu a {
+            color: #fff;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .menu a:hover {
+            color: var(--gold);
+        }
+
+        /* Mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* ==========================
+           BUTTONS
+        ========================== */
+        .btn {
+            display: inline-block;
+            padding: 15px 34px;
+            border-radius: 40px;
+            font-weight: bold;
+            transition: .4s;
+            margin-top: 15px;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--teal);
+        }
+
+        /* ==========================
+           HERO
+        ========================== */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(26, 60, 64, .65), rgba(26, 60, 64, .65)),
+                url("https://res.cloudinary.com/b50fjuew/image/upload/v1784801738/Beautifull_bride.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .brand {
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+        }
+
+        /* ==========================
+           SECTION STYLING
+        ========================== */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--teal);
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* ==========================
+           COLLECTIONS PREVIEW
+        ========================== */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, .08);
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            height: 380px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: var(--teal);
+        }
+
+        /* ==========================
+           LOOKBOOK
+        ========================== */
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .lookbook-item {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+            transition: .35s;
+        }
+
+        .lookbook-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .lookbook-item img {
+            height: 360px;
+            object-fit: cover;
+        }
+
+        .lookbook-content {
+            padding: 22px;
+        }
+
+        .lookbook-content h3 {
+            font-size: 1.8rem;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .price {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--gold);
+        }
+
+        /* ==========================
+           PROCESS
+        ========================== */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .process-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+            transition: .35s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--gold);
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .process-card h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--teal);
+        }
+
+        /* ==========================
+           PRICING
+        ========================== */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+            text-align: center;
+            transition: .35s;
+        }
+
+        .price-card:hover {
+            transform: scale(1.03);
+        }
+
+        .price-card.featured {
+            background: var(--teal);
+            color: white;
+        }
+
+        .price-card.featured h3,
+        .price-card.featured h2 {
+            color: white;
+        }
+
+        .price-card h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--teal);
+        }
+
+        .price-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .price-card p {
+            margin-bottom: 25px;
+        }
+
+        .price-card a {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--gold);
+            border-radius: 40px;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* ==========================
+           FOOTER
+        ========================== */
+        footer {
+            background: var(--teal);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .socials {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .socials a {
+            width: 55px;
+            height: 55px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: .3s;
+        }
+
+        .socials a:hover {
+            background: var(--gold);
+            color: var(--teal);
+        }
+
+        /* ==========================
+           WHATSAPP BUTTON
+        ========================== */
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+            z-index: 9999;
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* ==========================
+           RESPONSIVE
+        ========================== */
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .menu {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--teal);
+                padding: 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                display: block;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================
+    NAVIGATION
+    ========================== -->
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="logo">Zuri Atelier</div>
+            <ul class="menu" id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#lookbook">Lookbook</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================
+    HERO
+    ========================== -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="brand">Zuri Atelier</div>
+            <h1>Where Heritage Wears the Crown</h1>
+            <p>
+                Bespoke bridal, aso-ebi, and ready-to-wear —
+                crafted in Lagos, inspired by the continent,
+                made for the woman who knows her worth.
+            </p>
+            <a href="#pricing" class="btn btn-primary">Book a Consultation</a>
+            <a href="#lookbook" class="btn btn-outline">View Lookbook</a>
+        </div>
+    </header>
+
+    <!-- ==========================
+    COLLECTIONS
+    ========================== -->
+    <section id="collections">
+        <div class="container">
+            <h2 class="section-title">Collections Rooted in Story</h2>
+            <p class="section-description">
+                Every fabric carries a history.
+                Every silhouette tells a tale.
+                Explore our world — where tradition meets the future.
+            </p>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801737/Tred_video.jpg" alt="Bridal Collection">
+                    <div class="card-content">
+                        <h3>Bridal</h3>
+                        <p>
+                            For the queen stepping into her forever —
+                            lace and Ankara woven into a love letter.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801736/Asoebi_girl.jpg" alt="Aso-Ebi">
+                    <div class="card-content">
+                        <h3>Aso-Ebi</h3>
+                        <p>
+                            Unity in elegance.
+                            Premium fabrics for the tribe that celebrates together.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801736/Faceless_ankara.jpg" alt="Ready to Wear">
+                    <div class="card-content">
+                        <h3>Ready-to-Wear</h3>
+                        <p>
+                            Bold, vibrant, and unapologetically African —
+                            for the woman moving through life with purpose.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+    LOOKBOOK
+    ========================== -->
+    <section id="lookbook">
+        <div class="container">
+            <h2 class="section-title">The Zuri Edit — Where Fabric Speaks</h2>
+            <p class="section-description">
+                From the first sketch to the final stitch,
+                each piece is a dialogue between the designer
+                and the wearer. Here, you'll find the soul of African fashion.
+            </p>
+            <div class="lookbook-grid">
+                <div class="lookbook-item">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801738/Beautifull_bride.jpg" alt="Bridal Gown">
+                    <div class="lookbook-content">
+                        <h3>Bridal Gown</h3>
+                        <span class="price">₦450k</span>
+                    </div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801736/Gele_girl.jpg" alt="Aso-Ebi Set">
+                    <div class="lookbook-content">
+                        <h3>Aso-Ebi Set</h3>
+                        <span class="price">₦250k</span>
+                    </div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801736/Faceless_ankara.jpg" alt="Ready-to-Wear">
+                    <div class="lookbook-content">
+                        <h3>Ready-to-Wear</h3>
+                        <span class="price">₦180k</span>
+                    </div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801737/Beautiful_red_dress.jpg" alt="Traditional Wedding">
+                    <div class="lookbook-content">
+                        <h3>Traditional Wedding</h3>
+                        <span class="price">₦550k</span>
+                    </div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801736/Guy.jpg" alt="Bridal Jumpsuit">
+                    <div class="lookbook-content">
+                        <h3>Bridal Jumpsuit</h3>
+                        <span class="price">₦380k</span>
+                    </div>
+                </div>
+                <div class="lookbook-item">
+                    <img src="https://res.cloudinary.com/b50fjuew/image/upload/v1784801736/Akara_hanging.jpg" alt="Aso-Ebi Celebration">
+                    <div class="lookbook-content">
+                        <h3>Aso-Ebi Celebration</h3>
+                        <span class="price">₦320k</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+    BESPOKE PROCESS
+    ========================== -->
+    <section id="process">
+        <div class="container">
+            <h2 class="section-title">The Journey to Your Piece</h2>
+            <p class="section-description">
+                From your vision to a finished garment, we walk beside you —
+                listening, sketching, fitting, and perfecting.
+            </p>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="step-number">1</div>
+                    <h3>Consult</h3>
+                    <p>
+                        We sit with you. We hear your story,
+                        your dream, your occasion.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="step-number">2</div>
+                    <h3>Sketch</h3>
+                    <p>
+                        Our designers translate your vision
+                        into a unique design, just for you.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="step-number">3</div>
+                    <h3>Fit</h3>
+                    <p>
+                        Two, three — as many as it takes.
+                        Because perfection is a process.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="step-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>
+                        Your piece, completed with care,
+                        delivered to you with pride.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+    PRICING
+    ========================== -->
+    <section id="pricing">
+        <div class="container">
+            <h2 class="section-title">Craftsmanship Worth the Investment</h2>
+            <p class="section-description">
+                Quality is never an accident.
+                It is the result of honest work,
+                premium materials,
+                and a deep respect for the wearer.
+            </p>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Essentials</h3>
+                    <h2>₦150k – ₦300k</h2>
+                    <p>
+                        Entry into elegance.
+                        Standard Ankara,
+                        clean finishing,
+                        and two fittings —
+                        for the woman who knows style begins with the basics.
+                    </p>
+                    <a href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I'm%20interested%20in%20your%20Essentials%20package." target="_blank">Book Now</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>Premium</h3>
+                    <h2>₦400k – ₦800k</h2>
+                    <p>
+                        Elevated.
+                        Premium Ankara,
+                        custom embellishments,
+                        and three fittings —
+                        for the woman who refuses to compromise.
+                    </p>
+                    <a href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I'm%20interested%20in%20your%20Premium%20package." target="_blank">Book Now</a>
+                </div>
+                <div class="price-card">
+                    <h3>VIP</h3>
+                    <h2>₦1M+</h2>
+                    <p>
+                        The crown jewel.
+                        French lace,
+                        silk,
+                        five fittings —
+                        for the woman whose day demands nothing less than perfection.
+                    </p>
+                    <a href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I'm%20interested%20in%20your%20VIP%20package." target="_blank">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================
+    FOOTER
+    ========================== -->
+    <footer id="footer">
+        <div class="container">
+            <h2>Zuri Atelier</h2>
+            <p><strong>Beautifully crafted. For you.</strong></p>
+            <p>
+                <i class="fa-solid fa-phone"></i> 08163082205
+            </p>
+            <p>
+                <i class="fa-solid fa-envelope"></i> hello@zuriatelier.ng
+            </p>
+            <div class="socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p style="margin-top: 40px; opacity: .8;">
+                &copy; 2026 Zuri Atelier. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==========================
+    WHATSAPP BUTTON
+    ========================== -->
+    <a class="whatsapp"
+       href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I%20found%20your%20website%20and%20I'm%20interested%20in%20your%20fashion%20collections"
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ==========================
+    JAVASCRIPT
+    ========================== -->
+    <script>
+        // Mobile Navigation
+        const toggle = document.getElementById("toggle");
+        const menu = document.getElementById("menu");
+
+        toggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+
+        // Close mobile menu after clicking a link
+        document.querySelectorAll(".menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("active");
+            });
+        });
+
+        // Smooth fade-in animation with Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.animate(
+                        [
+                            { opacity: 0, transform: "translateY(40px)" },
+                            { opacity: 1, transform: "translateY(0)" }
+                        ],
+                        {
+                            duration: 700,
+                            fill: "forwards"
+                        }
+                    );
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: .2
+        });
+
+        document.querySelectorAll(
+            "section, .card, .lookbook-item, .process-card, .price-card"
+        ).forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
