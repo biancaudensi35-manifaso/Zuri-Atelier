@@ -1,0 +1,313 @@
+<!-- ==========================
+BESPOKE PROCESS
+========================== -->
+
+<section id="process">
+
+<div class="container">
+
+<h2 class="section-title">
+The Journey to Your Piece
+</h2>
+
+<p class="section-description">
+From your vision to a finished garment, we walk beside you —
+listening, sketching, fitting, and perfecting.
+</p>
+
+<div class="process-grid">
+
+<div class="process-card">
+
+<div class="step-number">1</div>
+
+<h3>Consult</h3>
+
+<p>
+We sit with you. We hear your story,
+your dream, your occasion.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="step-number">2</div>
+
+<h3>Sketch</h3>
+
+<p>
+Our designers translate your vision
+into a unique design, just for you.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="step-number">3</div>
+
+<h3>Fit</h3>
+
+<p>
+Two, three — as many as it takes.
+Because perfection is a process.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<div class="step-number">4</div>
+
+<h3>Delivery</h3>
+
+<p>
+Your piece, completed with care,
+delivered to you with pride.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+PRICING
+========================== -->
+
+<section id="pricing">
+
+<div class="container">
+
+<h2 class="section-title">
+Craftsmanship Worth the Investment
+</h2>
+
+<p class="section-description">
+
+Quality is never an accident.
+It is the result of honest work,
+premium materials,
+and a deep respect for the wearer.
+
+</p>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h3>Essentials</h3>
+
+<h2>₦150k – ₦300k</h2>
+
+<p>
+
+Entry into elegance.
+Standard Ankara,
+clean finishing,
+and two fittings —
+for the woman who knows style begins with the basics.
+
+</p>
+
+<a href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I'm%20interested%20in%20your%20Essentials%20package." target="_blank">
+Book Now
+</a>
+
+</div>
+
+<div class="price-card featured">
+
+<h3>Premium</h3>
+
+<h2>₦400k – ₦800k</h2>
+
+<p>
+
+Elevated.
+Premium Ankara,
+custom embellishments,
+and three fittings —
+for the woman who refuses to compromise.
+
+</p>
+
+<a href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I'm%20interested%20in%20your%20Premium%20package." target="_blank">
+Book Now
+</a>
+
+</div>
+
+<div class="price-card">
+
+<h3>VIP</h3>
+
+<h2>₦1M+</h2>
+
+<p>
+
+The crown jewel.
+French lace,
+silk,
+five fittings —
+for the woman whose day demands nothing less than perfection.
+
+</p>
+
+<a href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I'm%20interested%20in%20your%20VIP%20package." target="_blank">
+Book Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+FOOTER
+========================== -->
+
+<footer id="footer">
+
+<div class="container">
+
+<h2>Zuri Atelier</h2>
+
+<p><strong>Beautifully crafted. For you.</strong></p>
+
+<p>
+
+<i class="fa-solid fa-phone"></i>
+
+08163082205
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-envelope"></i>
+
+hello@zuriatelier.ng
+
+</p>
+
+<div class="socials">
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-pinterest"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-tiktok"></i>
+</a>
+
+</div>
+
+<p style="margin-top:40px;opacity:.8;">
+
+© 2026 Zuri Atelier.
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- ==========================
+WHATSAPP BUTTON
+========================== -->
+
+<a class="whatsapp"
+href="https://wa.me/2348163082205?text=Hi%20Zuri%20Atelier,%20I%20found%20your%20website%20and%20I'm%20interested%20in%20your%20fashion%20collections"
+target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- ==========================
+JAVASCRIPT
+========================== -->
+
+<script>
+
+// Mobile Navigation
+
+const toggle = document.getElementById("toggle");
+const menu = document.getElementById("menu");
+
+toggle.addEventListener("click", () => {
+menu.classList.toggle("active");
+});
+
+// Close mobile menu after clicking a link
+
+document.querySelectorAll(".menu a").forEach(link => {
+
+link.addEventListener("click", () => {
+
+menu.classList.remove("active");
+
+});
+
+});
+
+// Smooth fade-in animation
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate(
+
+[
+{
+opacity:0,
+transform:"translateY(40px)"
+},
+{
+opacity:1,
+transform:"translateY(0)"
+}
+],
+
+{
+duration:700,
+fill:"forwards"
+}
+
+);
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+{
+threshold:.2
+});
+
+document.querySelectorAll(
+"section,.card,.lookbook-item,.process-card,.price-card"
+).forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
